@@ -124,7 +124,7 @@ function generateOneNumber(){
 
 $(document).keydown(function (event) {
 
-    event.preventDefault();//取消按键默认作用
+
 
    switch (event.keyCode){
        case 37://left
@@ -132,24 +132,30 @@ $(document).keydown(function (event) {
              setTimeout("generateOneNumber()",210);
               setTimeout("isgameover()",300);
            }
+
+           event.preventDefault();//取消按键默认作用
            break;
        case 38://up
            if(moveUp()){
                setTimeout("generateOneNumber()",210);
                setTimeout("isgameover()",300);
            }
+
+           event.preventDefault();//取消按键默认作用
            break;
        case 39://right
            if(moveRight()){
                setTimeout("generateOneNumber()",210);
                setTimeout("isgameover()",300);
            }
+           event.preventDefault();//取消按键默认作用
            break;
        case 40://down
            if(moveDown()){
                setTimeout("generateOneNumber()",210);
                setTimeout("isgameover()",300);
            }
+           event.preventDefault();//取消按键默认作用
            break;
        default:
            break;
