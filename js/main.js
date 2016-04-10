@@ -28,6 +28,13 @@ function prepareForMobile(){
     $(".cell").css("border-radius",0.02*cellSideLength);
 }
 
+$(function () {
+   $("#newgamebutton").click(function () {
+       newgame();
+   }) ;
+});
+
+
 function newgame(){
     /*≥ı ºªØ∆Â≈Ã∏Ò*/
     init();

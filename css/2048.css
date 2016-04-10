@@ -11,22 +11,14 @@ header h1 {
     font-family: "Arial";
 }
 
-header #newgamebutton {
-    display: block;
-    margin: 0 auto;
-
+#newgamebutton {
     width: 100px;
     padding: 10px;
     background-color: gray;
-
     font-family: "Arial";
     color: white;
     border-radius: 10px;
-    text-decoration: none;
-}
-
-header #newgamebutton:hover {
-    background-color: #999999;
+    outline:none;
 }
 
 header p{
