@@ -1,4 +1,4 @@
-var board=new Array();
+var board=[];
 var score=0;
 
 var startx=0;
@@ -55,7 +55,7 @@ function init() {
         }
     }
     for (var i = 0; i < 4; i++) {
-        board[i]=new Array();
+        board[i]=[];
         for (var j = 0; j < 4; j++) {
             board[i][j]=0;
         }
@@ -100,26 +100,24 @@ function generateOneNumber(){
         //随机一个位置
         var randx=parseInt(Math.floor(Math.random() *4));
         var randy=parseInt(Math.floor(Math.random() *4));
-        var times=0;//优化算法
-        while(times<50){
-            if(board[randx][randy]==0){
-                break;
-            }else{
-                 randx=parseInt(Math.floor(Math.random() *4));
-                 randy=parseInt(Math.floor(Math.random() *4));
-            }
-            times++;
-        }
-        if(times==50){
-            for(var i= 0;i<4;i++){
-                for(var j=0;j<4;j++){
-                    if(board[i][j]==0){
-                        randx=i;
-                        randy=j;
-                    }
+
+        var count=0;
+        var gather=[];
+        for(var i=0;i<4;i++)
+            for(var j=0;j<4;j++)
+            {
+                if(board[i][j]==0)
+                {
+                    gather[count]=i*10+j;//将可生成的位置的坐标变成一个两个数，十位数为i，个位数为j;
+                    count++;
                 }
             }
-        }
+        var pos= parseInt( Math.floor( Math.random()  * count ) );
+
+        randx=Math.floor(gather[pos]/10);
+        randy=Math.floor(gather[pos]%10);
+
+
         //随机一个数字
         var randNumber=Math.random()<0.5?2:4;
         //随机显示
