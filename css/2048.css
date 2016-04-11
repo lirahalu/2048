@@ -19,6 +19,9 @@ header h1 {
     color: white;
     border-radius: 10px;
     outline:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 header p{
