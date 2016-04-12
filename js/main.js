@@ -18,14 +18,14 @@ function prepareForMobile() {
         cellSpace = 20;
         cellSideLength = 100;
     }
-    $("#container").css("width", ContainerWidth - 2 * cellSpace);
-    $("#container").css("height", ContainerWidth - 2 * cellSpace);
-    $("#container").css("padding", cellSpace);
-    $("#container").css("border-radius", 0.02 * ContainerWidth);
+    $("#container").css("width", ContainerWidth - 2 * cellSpace)
+        .css("height", ContainerWidth - 2 * cellSpace)
+        .css("padding", cellSpace)
+        .css("border-radius", 0.02 * ContainerWidth);
 
-    $(".cell").css("width", cellSideLength);
-    $(".cell").css("height", cellSideLength);
-    $(".cell").css("border-radius", 0.02 * cellSideLength);
+    $(".cell").css("width", cellSideLength)
+        .css("height", cellSideLength)
+        .css("border-radius", 0.02 * cellSideLength);
 }
 
 $(function () {
@@ -49,8 +49,8 @@ function init() {
         for (var j = 0; j < 4; j++) {
 
             var cell = $("#cell-" + i + "-" + j);
-            cell.css("top", getPosTop(i, j));
-            cell.css("left", getPosLeft(i, j));
+            cell.css("top", getPosTop(i, j))
+                .css("left", getPosLeft(i, j));
 
         }
     }
@@ -74,23 +74,30 @@ function updateBoardView() {
             var theNumberCell = $("#number-cell-" + i + "-" + j);
 
             if (board[i][j] == 0) {
-                theNumberCell.css("width", 0);
-                theNumberCell.css("height", 0);
-                theNumberCell.css("top", getPosTop(i, j) + cellSideLength / 2);
-                theNumberCell.css("left", getPosLeft(i, j) + cellSideLength / 2);
+                theNumberCell.css("width", cellSideLength)
+                    .css("height", cellSideLength)
+                    .css("top", getPosTop(i, j))
+                    .css("left", getPosLeft(i, j))
             } else {
-                theNumberCell.css("width", cellSideLength);
-                theNumberCell.css("height", cellSideLength);
-                theNumberCell.css("top", getPosTop(i, j));
-                theNumberCell.css("left", getPosLeft(i, j));
-                theNumberCell.css("background-color", getNumberBackgroundColor(board[i][j]));
-                theNumberCell.css("color", getNumberColor(board[i][j]));
-                theNumberCell.text(board[i][j]);
+                theNumberCell.css("width", cellSideLength)
+                    .css("height", cellSideLength)
+                    .css("top", getPosTop(i, j))
+                    .css("left", getPosLeft(i, j))
+                    .css("background-color", getNumberBackgroundColor(board[i][j]))
+                    .css("color", getNumberColor(board[i][j]))
+                    .text(board[i][j]);
+            }
+
+            //当计算到4位数时，使字体变小
+            if (board[i][j] >= 1024) {
+                theNumberCell.css("font-size", 0.4 * cellSideLength + "px")
+                    .css("line-height", cellSideLength + "px");
+            } else {
+                theNumberCell.css("font-size", 0.6 * cellSideLength + "px")
+                    .css("line-height", cellSideLength + "px");
             }
         }
     }
-    $(".number-cell").css("line-height", cellSideLength + "px");
-    $(".number-cell").css("font-size", 0.6 * cellSideLength + "px")
 }
 
 function generateOneNumber() {
