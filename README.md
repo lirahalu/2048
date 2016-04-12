@@ -24,24 +24,45 @@
      randy = Math.floor(gather[pos] % 10);
       
       
- 原算法如下：
-        `var times = 0;`
-          `while( times < 50 ){`
-             ` if( board[randx][randy] ==-1 )`
-     `break;`
+ //原算法如下：
+ 
+    var times = 0;
+        while( times < 50 ){
+            if( board[randx][randy] ==-1 )
+    break;
 
         randx = parseInt( Math.floor( Math.random()  * 4 ) );
         randy = parseInt( Math.floor( Math.random()  * 4 ) );
+      times ++;
+      }
+  
+      if( times == 50 ){
+      
+        for( var i = 0 ; i < 4 ; i ++ )
+        
+           for( var j = 0 ; j < 4 ; j ++ ){
+           
+        if( board[i][j] == -1 ){
+        
+         randx = i;
+         
+        randy = j;
+       }
 
-      `times ++;`
-  `}`
-`if( times == 50 ){`
-    `for( var i = 0 ; i < 4 ; i ++ )`
-       `for( var j = 0 ; j < 4 ; j ++ ){`
-        `if( board[i][j] == -1 ){`
-         `randx = i;`
-       `randy = j;`
-        `}`
-`}`
- `}`
 相比原算法，速度更快，不会陷入死循环，且更具随机性
+
+4.修复超过4位数显示超出格子的BUG
+
+    //原代码
+    theNumberCell.css("line-height", cellSideLength + "px");
+    theNumberCell.css("font-size", 0.6 * cellSideLength + "px")
+     
+    //增加判断，修改字体大小 
+     if (board[i][j] >= 1024) {
+                  theNumberCell.css("font-size", 0.4 * cellSideLength + "px")
+                    .css("line-height", cellSideLength + "px");
+            } else {
+                theNumberCell.css("font-size", 0.6 * cellSideLength + "px")
+                    .css("line-height", cellSideLength + "px");
+            }
+       
