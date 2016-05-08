@@ -236,6 +236,7 @@ function isgameover() {
 function gameover() {
     swal({
         title: "GameOver!",
+        text: "score:"+$("#score").text(),
         timer: 2500,
         showConfirmButton: true
     });

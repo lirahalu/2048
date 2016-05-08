@@ -23,4 +23,14 @@ function showMoveAnimation(formx, formy, tox, toy) {
 
 function updateScore(score) {
     $("#score").text(score);
+
+    if(localStorage.a){
+        $("#top-score").text(localStorage.a);
+    }
+    if(score>localStorage.a) {
+        localStorage.a = score;
+        $("#top-score").text(localStorage.a);
+    }
+
+
 }

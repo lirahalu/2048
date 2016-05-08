@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head lang="zh-cn">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2048小游戏</title>
     <script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
-    <script src="js/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <script src="js/alert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/alert.css">
     <link rel="stylesheet" href="css/2048.css"/>
     <script type="text/javascript" src="js/support.js"></script>
     <script type="text/javascript" src="js/show.js"></script>
@@ -16,10 +16,11 @@
 </head>
 <body>
 <header>
-    <h1>2048(by:lirahalu)</h1>
+    <h1>2048<span>(by:lirahalu)</span></h1>
     <input type="button" id="newgamebutton" value="New Game">
 
-    <p>score:<span id="score">0</span></p>
+    <p>Score:<span id="score">0</span></p>
+    <div class="Top">TopScore:<span id="top-score">0</span></div>
 </header>
 
 <div id="container">

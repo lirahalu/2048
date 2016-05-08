@@ -10,7 +10,10 @@ header h1 {
     font-weight: bold;
     font-family: "Arial";
 }
+header h1 span{
+    font-size: 15px;
 
+}
 #newgamebutton {
     width: 100px;
     padding: 10px;
@@ -28,6 +31,13 @@ header p {
     font-family: Arial;
     font-size: 25px;
     margin: 0 auto;
+}
+.Top{
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-family: Arial;
+    margin: 10px;
 }
 
 #container {
@@ -68,9 +78,6 @@ header p {
     background-color: #999999 ! important;
     color: #FFffff;
 }
-
-
-
 
 
 
