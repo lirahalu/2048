@@ -30,9 +30,9 @@ function updateScore(score) {
     else{
         $("#top-score").text(localStorage.sc);
     }
-    if(score>localStorage.sc) {
-        localStorage.sc = score;
-        $("#top-score").text(localStorage.sc);
+    if(score>localStorage.getItem("sc")) {
+        localStorage.setItem("sc", score);
+        $("#top-score").text(localStorage.getItem("sc"));
     }
 
 
