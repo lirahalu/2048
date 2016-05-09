@@ -40,7 +40,7 @@ header p {
     margin: 10px;
 }
 
-#container {
+.container {
     width: 460px;
     height: 460px;
     padding: 20px;
