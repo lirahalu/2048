@@ -23,7 +23,6 @@ function showMoveAnimation(formx, formy, tox, toy) {
 
 function updateScore(score) {
     $("#score").text(score);
-
     if(!localStorage.sc){
         localStorage.sc=0;
     }

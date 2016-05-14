@@ -52,8 +52,10 @@ function getNumberBackgroundColor(number) {
         case 8192:
             return "#93c";
             break;
+        default :
+            return "black";
+            break;
     }
-    return "black";
 }
 
 function getNumberColor(number) {
