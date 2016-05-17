@@ -3,7 +3,7 @@
 
 在教程基础上，我做了以下一些优化：
 
-1.优化了New Game 按钮，将原来的a标签改写成button，使其变成click事件样式发生变化而不是hover；
+1.优化了New Game 按钮，将原来的a标签改写成button；
 
 2.优化弹出框显示，
 ![](https://raw.githubusercontent.com/lirahalu/2048/master/image/20160411233547.jpg)
@@ -66,3 +66,4 @@
                     .css("line-height", cellSideLength + "px");
             }
        
+5.增加本地缓存，记忆最高分
